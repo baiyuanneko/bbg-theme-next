@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Archive
+        run: |
+          zip -r bbg_theme_next.zip index.html
+          mv bbg_theme_next.zip bbg_theme_next.bbgtheme2
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: bbg_theme_next
+          draft: false
+          prerelease: false
+          files: bbg_theme_next.bbgtheme2
