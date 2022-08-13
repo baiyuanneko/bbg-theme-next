@@ -960,12 +960,12 @@ function content_decrypt(content, password, verify = null) {
 
         for (let i = 0; i < articleListPageLength; i++) {
           if (i + 1 === currentArticleListPageOrder) {
-            document.getElementById("container").innerHTML += `
-          <button class="btn btn-primary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
+            document.getElementById("actual_contents_col").innerHTML += `
+          <button class="btn btn-dark btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
           
           `;
           } else {
-            document.getElementById("container").innerHTML += `
+            document.getElementById("actual_contents_col").innerHTML += `
             
             <button class="btn btn-secondary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
             
@@ -973,7 +973,7 @@ function content_decrypt(content, password, verify = null) {
           }
         }
 
-        document.getElementById("container").innerHTML += `
+        document.getElementById("actual_contents_col").innerHTML += `
         <br /><br />
         <p style="color:grey;" id="page_order_html">你当前正在浏览文章列表的第${currentArticleListPageOrder}页（共${articleListPageLength}页）。
 </p>
